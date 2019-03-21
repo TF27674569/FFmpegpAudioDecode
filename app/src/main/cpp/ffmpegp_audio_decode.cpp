@@ -110,7 +110,7 @@ Java_com_sample_audiod_ffmpegp_AudioUtils_decode(JNIEnv *env, jclass type, jstri
     // 输出采样格式 16bt
     enum AVSampleFormat out_sample_fmt = AV_SAMPLE_FMT_S16;
     // 输出采样率 44100hz
-    int  out_sample_rate = 44100;
+    int  out_sample_rate = BUFFER_SIZE >> 1;
 
     swr_alloc_set_opts(swrContext,
                        out_ch_layout,out_sample_fmt,out_sample_rate,
