@@ -126,6 +126,8 @@ Java_com_sample_audiod_ffmpegp_AudioUtils_decode(JNIEnv *env, jclass type, jstri
 
     FILE* file = fopen(output,"wb");
     while(av_read_frame(avFormatContext,avPacket) >=0){
+      // 只解码音频packet
+     if (avPacket->stream_index==audio_index){
         // 读取音频帧
         if(avcodec_decode_audio4(avCodecContext,avFrame,&got_frame,avPacket)<0){
             LOGE("解码完成")
@@ -146,7 +148,8 @@ Java_com_sample_audiod_ffmpegp_AudioUtils_decode(JNIEnv *env, jclass type, jstri
 
             fwrite(out_buffer,1,out_buffer_size,file);
         }
-        av_free_packet(avPacket);
+      }
+       av_free_packet(avPacket);
     }
 
 
