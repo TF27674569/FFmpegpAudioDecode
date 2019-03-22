@@ -20,4 +20,4 @@
 
 </br></br>
 ### 遗留问题
-&nbsp;&nbsp; <font color=red > 纯音频数据重采样成功，视频文件重采样音频文件采集完成后崩溃 </font></br>
+&nbsp;&nbsp; <font color=red > 纯音频数据重采样成功，视频文件重采样音频文件采集完成后崩溃 (已解决)</font></br>
